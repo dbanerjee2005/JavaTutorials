@@ -1,11 +1,11 @@
 package com.tutorial.basics.classes;
 
 public class Student {
-	private String name;
+	public String name;
 	private int rollNo;
 	
 	public void setName(String name) {
-//		System.out.println("Setting name");
+//	System.out.println("Setting name");
 		this.name = name;
 	}
 
