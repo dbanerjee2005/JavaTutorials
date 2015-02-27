@@ -5,12 +5,14 @@ public class Employee {
 	private String name;
 	private int id;
 	private String department;
+	public static int count;
 	
 	/*public Employee() {
 		this.name = "Default";
 	}*/
 	public Employee(String nameLocal) {
 		name = nameLocal;
+		count++;
 	}
 	
 	public Employee(String name, int id) {
@@ -49,5 +51,11 @@ public class Employee {
 	@Override
 	protected void finalize() throws Throwable {
 		System.out.println("Destroyed " + this.name);
+	}
+	
+	
+	public boolean equals(Object paramObject) {
+		Employee emp = (Employee)paramObject;
+		return this.name.equals(emp.getName());
 	}
 }
