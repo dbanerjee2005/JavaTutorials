@@ -25,4 +25,8 @@ public class Student {
 	public int getRollNo() {
 		return this.rollNo;
 	}
+	
+	public class StudentGroup {
+		public String groupName;
+	}
 }

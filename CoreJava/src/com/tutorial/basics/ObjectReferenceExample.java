@@ -3,7 +3,6 @@ package com.tutorial.basics;
 import com.tutorial.basics.constructor.Employee;
 
 public class ObjectReferenceExample {
-
 	public static void main(String[] args) {
 		Employee emp1 = new Employee("Kareena");
 		Employee emp2 = new Employee("Kareena");
