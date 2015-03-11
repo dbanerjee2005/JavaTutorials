@@ -2,18 +2,11 @@ package com.tutorial.basics;
 
 public class Recursion {
 
-	public static void main(String[] args) {
-		int value = Factorial.fact(4);
-		System.out.println(value);
+	static {
+		System.out.println("Hello************");
 	}
-}
-
-class Factorial {
-	static int fact(int n) {
-		int result;
-		if (n == 1)
-			return 1;
-		result = fact(n - 1) * n;
-		return result;
+	
+	public static void main(String[] args) {
+		System.out.println("================");
 	}
 }
