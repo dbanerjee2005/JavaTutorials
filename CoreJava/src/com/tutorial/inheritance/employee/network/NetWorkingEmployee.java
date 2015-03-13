@@ -1,6 +1,9 @@
-package com.tutorial.inheritance;
+package com.tutorial.inheritance.employee.network;
 
-public class NetWorkingEmployee extends Employee {
+import com.tutorial.inheritance.Jumpable;
+import com.tutorial.inheritance.employee.Employee;
+
+public class NetWorkingEmployee extends Employee implements Jumpable {
 	private int debbugingSkill;
 	private int serverSkills;
 	
@@ -32,5 +35,17 @@ public class NetWorkingEmployee extends Employee {
 	@Override
 	public void meetingAgenda() {
 		System.out.println("Minimum Meeting Time is 1/2 Hr");
+	}
+
+	@Override
+	public void vehicleInfo() {
+		System.out.println("NetWorkingEmployee.vehicleInfo() Do not have a vehicle");
+		
+	}
+
+	@Override
+	public void jump() {
+		System.out.println("I jump very high");
+		
 	}
 }

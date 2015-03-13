@@ -1,6 +1,8 @@
-package com.tutorial.inheritance;
+package com.tutorial.inheritance.employee.it;
 
-public class ITEmployee extends Employee {
+import com.tutorial.inheritance.employee.Employee;
+
+public abstract class ITEmployee extends Employee {
 	
 	private int programSkillEffi;
 	private int noOfProgLang;
@@ -34,5 +36,16 @@ public class ITEmployee extends Employee {
 	@Override
 	public void meetingAgenda() {
 		System.out.println("Minimum Meeting Time is 1 Hr");
+	}
+	
+	public void algorithmSkills() {
+		System.out.println("Skill is minimum 6");
+	}
+	
+	public abstract void programmingSkills();
+	
+	@Override
+	public void vehicleInfo() {
+		System.out.println("Has vehicle");		
 	}
 }

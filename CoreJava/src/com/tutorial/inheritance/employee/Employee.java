@@ -1,4 +1,4 @@
-package com.tutorial.inheritance;
+package com.tutorial.inheritance.employee;
 
 public abstract class Employee {
 	private String name;
@@ -41,4 +41,6 @@ public abstract class Employee {
 	}
 	
 	public abstract void meetingAgenda();
+	
+	public abstract void vehicleInfo();
 }
