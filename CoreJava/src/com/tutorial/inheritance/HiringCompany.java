@@ -36,9 +36,7 @@ public class HiringCompany {
 		
 		NetWorkingEmployee networkEmp = new NetWorkingEmployee("Ishtiaq",56);
 		networkEmp.meetingAgenda();
-		
-		
-		
+		networkEmp.getEmpType();
 	}
 	
 	public static Employee getEmployee(String name , int id, String type){

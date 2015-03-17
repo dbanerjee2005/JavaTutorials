@@ -10,5 +10,7 @@ public class JumpingJobs {
 		
 		Jumpable networkEmp = new NetWorkingEmployee("Ishtiaq",56);
 		networkEmp.jump();
+		
+		Jumpable jump = () -> {System.out.println("Hello");};
 	}
 }

@@ -6,4 +6,8 @@ public class Robots implements Jumpable {
 	public void jump() {
 		System.out.println("I jump high");
 	}
+	
+	void testing() {
+		
+	}
 }

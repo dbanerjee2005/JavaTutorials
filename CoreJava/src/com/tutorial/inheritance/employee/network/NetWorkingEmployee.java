@@ -7,6 +7,8 @@ public class NetWorkingEmployee extends Employee implements Jumpable {
 	private int debbugingSkill;
 	private int serverSkills;
 	
+	void callMe(){}
+	
 	public int getDebbugingSkill() {
 		return debbugingSkill;
 	}
@@ -46,6 +48,5 @@ public class NetWorkingEmployee extends Employee implements Jumpable {
 	@Override
 	public void jump() {
 		System.out.println("I jump very high");
-		
 	}
 }
