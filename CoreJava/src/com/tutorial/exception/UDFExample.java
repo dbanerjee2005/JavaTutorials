@@ -2,7 +2,7 @@ package com.tutorial.exception;
 
 public class UDFExample {
 
-	public static void main(String[] args) throws UserDefinedException, HomeWorkException {
+	public static void main(String[] args) {
 
 		/*
 		 * int firstValue = 0; try { if (firstValue == 0) throw new
@@ -18,8 +18,12 @@ public class UDFExample {
 		}catch(HomeWorkException hwe) {
 			hwe.printStackTrace();
 		}*/
-		doBusinessFunctionality();
-		doMyHomework(null);
+		try {
+			doBusinessFunctionality();
+			doMyHomework(null);
+		} catch (HomeWorkException | UserDefinedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void doBusinessFunctionality() throws UserDefinedException {
