@@ -11,7 +11,7 @@ public class ResourceSharingThread {
 		Thread sudheer = new Thread(horse, "Sudheer");
 		Thread kavitha = new Thread(horse, "Kavitha");
 		
-		sudheer.start();
+		sudheer.start(); 
 		kavitha.start();
 		
 		System.out.println("==================I am done....======================");
