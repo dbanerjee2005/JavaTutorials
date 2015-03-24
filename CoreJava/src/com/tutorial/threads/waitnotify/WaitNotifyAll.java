@@ -1,51 +1,52 @@
 package com.tutorial.threads.waitnotify;
 
 public class WaitNotifyAll {
+
 	public static void main(String[] args) {
-		Calculator calculator = new Calculator();
-
-		new Reader(calculator).start();
-		new Reader(calculator).start();
-		new Reader(calculator).start();
-
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		calculator.start();
+		Calculator calc = new Calculator();
+		
+		Reader oneR = new Reader(calc);
+		oneR.start();
+		new Reader(calc).start();
+		new Reader(calc).start();
+		
+		calc.start();
 	}
 }
 
 class Reader extends Thread {
-	Calculator c;
-
+	Calculator calc;
 	public Reader(Calculator calc) {
-		c = calc;
+		this.calc = calc;
 	}
-
+	@Override
 	public void run() {
-		synchronized (c) {
-			try {
-				System.out.println("Waiting for calculation...");
-				c.wait();
-			} catch (InterruptedException e) {
+		synchronized(calc) {
+			System.out.println("Waiting for the calculator to finish...");
+			try{
+				calc.wait();
+			}catch(Exception exp) {
+				exp.printStackTrace();
 			}
-			System.out.println("Total is: " + Thread.currentThread().getName()
-					+ " " + c.total);
+			
+			System.out.println(Thread.currentThread().getName() + " Total is " + calc.total);
 		}
 	}
 }
 
 class Calculator extends Thread {
 	int total;
-
+	@Override
 	public void run() {
-		synchronized (this) {
-			for (int i = 0; i < 100; i++) {
+		synchronized(this) {
+			for(int i = 0 ; i < 10; i++) {
 				total += i;
 			}
-			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			notifyAll();
 		}
 	}

@@ -1,34 +1,38 @@
 package com.tutorial.threads.waitnotify;
-public class WaitNotify {
-	public static void main(String [] args) {
-		ThreadB b = new ThreadB();
-		b.start();
-		
-		synchronized(b) {
-			System.out.println("WaitNotify.main()");
-			try {
-				System.out.println("Waiting for b to complete...");
-				b.wait();
-			} catch (InterruptedException e) {}
-		}
 
-		System.out.println("Total is: " + b.total);
+public class WaitNotify {
+
+	public static void main(String[] args) {
+		CalculateThread calcThread = new CalculateThread();
+		calcThread.start();
+		
+		synchronized(calcThread) {
+			System.out.println("Main Thread is waiting for Calculater thread to finish");
+			try {
+				calcThread.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		System.out.println(calcThread.total);
 	}
 }
 
-class ThreadB extends Thread {
+class CalculateThread extends Thread {
 	int total;
+	@Override
 	public void run() {
 		synchronized(this) {
-			for(int i=0;i<100;i++) {
+			for(int i = 0 ; i < 10; i++) {
 				total += i;
 			}
-			try{
+			try {
 				Thread.sleep(3000);
-			}catch(Exception exp){}
-
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			notify();
 		}
-
 	}
 }

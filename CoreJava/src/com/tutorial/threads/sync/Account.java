@@ -1,11 +1,13 @@
 package com.tutorial.threads.sync;
 
-class Account {
+public class Account {
 	private int balance = 50;
+	
 	public int getBalance() {
 		return balance;
 	}
-	public void withdraw(int amount) {
-		balance = balance - amount;
+	
+	public void withdraw(int withdrawAmount) {
+		balance = balance - withdrawAmount;
 	}
 }
